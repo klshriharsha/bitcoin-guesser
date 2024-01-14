@@ -23,3 +23,12 @@ A simple game where players guess whether the bitcoin price will go up or down i
 
 1. Make sure that VITE_BASE_URL is set in **.env**
 2. Run `npm install` followed by `npm run dev` to start the UI server
+
+## How it works
+
+### User creation
+
+1. When a username is entered, if the user does not exist in the backend, it is created, otherwise the given user information is fetched. Username is stored in browser's localStorage to maintain login information across browser sessions.
+2. When a guess is made, it is persisted in the backend as UNRESOLVED, along with the price at which the guess was made.
+3. A background job runs every 15 seconds to resolve any unresolved guesses. If 30 seconds have passed since a guess was made, and the bitcoin price did not change, the guess is marked as INDETERMINATE and resolved without change the player's score.
+4. If a guess was correct, the user's score is incremented, and if it was incorrect, the user's score is decremented.

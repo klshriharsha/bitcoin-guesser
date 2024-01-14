@@ -20,7 +20,7 @@ function computeScore(newPrice: number, guess: Guess): ComputeScore {
     const guessedTrend = guess.trend
 
     let result: Resolution = actualTrend === guessedTrend ? 'CORRECT' : 'INCORRECT'
-    if (actualTrend === 'UNCHANGED' && elapsedTime < 6e4) {
+    if (actualTrend === 'UNCHANGED' && elapsedTime < 3e4) {
         return {}
     }
 
@@ -65,5 +65,5 @@ export async function initiateGuessResolver() {
                 })
             }
         })
-    }, 25000)
+    }, 15000)
 }
