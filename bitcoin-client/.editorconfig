@@ -1,0 +1,8 @@
+root = true
+
+[*]
+insert_final_newline = true
+
+[*.{js,jsx,ts,tsx,html,css,cjs,json}]
+indent_size = 4
+indent_style = space

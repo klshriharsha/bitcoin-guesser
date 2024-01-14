@@ -1,0 +1,11 @@
+.user-drawer .MuiDrawer-paper {
+    min-height: 60%;
+}
+
+.transition-opacity {
+    transition: opacity 400ms;
+}
+
+.transition-opacity--dim {
+    opacity: 0.4;
+}
