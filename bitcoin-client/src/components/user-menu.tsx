@@ -20,6 +20,10 @@ export function UserMenu({ currentUsername }: UserMenuProps) {
 
     const handleCloseMenu = () => {
         setMenuAnchor(null)
+    }
+
+    const handleLogout = () => {
+        setMenuAnchor(null)
         unsetCurrentUsername()
         queryClient.invalidateQueries({ queryKey: userKey })
     }
@@ -49,7 +53,7 @@ export function UserMenu({ currentUsername }: UserMenuProps) {
                     'aria-labelledby': 'user-menu-button',
                 }}
             >
-                <MenuItem onClick={handleCloseMenu}>Logout</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
         </>
     )
